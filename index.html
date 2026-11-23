@@ -1117,11 +1117,11 @@ Host is up (0.00061s latency).
         if (++c.n < c.every) continue;
         c.n = 0;
         const k = c.k;   // brightness factor: bright at the page edges, faint behind the content column
-        if (c.prev) { ctx.fillStyle = 'rgba(53,199,240,' + (.7 * k).toFixed(2) + ')'; ctx.fillText(c.prev.ch, c.prev.x, c.prev.y); }
+        if (c.prev) { ctx.fillStyle = 'rgba(0,255,65,' + (.7 * k).toFixed(2) + ')'; ctx.fillText(c.prev.ch, c.prev.x, c.prev.y); }
         let ch;
         if (c.word) { ch = c.word[c.wi++]; if (c.wi >= c.word.length) { c.word = null; c.wi = 0; } }
         else ch = GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
-        ctx.fillStyle = 'rgba(215,245,255,' + (.95 * k).toFixed(2) + ')';
+        ctx.fillStyle = 'rgba(200,255,210,' + (.95 * k).toFixed(2) + ')';
         ctx.fillText(ch, c.x, c.y);
         c.prev = { ch, x: c.x, y: c.y };
         c.y += FS;
